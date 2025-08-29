@@ -8,9 +8,12 @@ from tqdm import tqdm
 torch.set_float32_matmul_precision("high")
 torch.manual_seed(1337)
 
+# --- Project root ---
+ROOT = Path(__file__).resolve().parent.parent
+
 # --- Configuration ---
-ACTIVATION_DIR = Path("../results/activations")
-SAE_OUTPUT_DIR = Path("../results/saes")
+ACTIVATION_DIR = ROOT / "results" / "activations"
+SAE_OUTPUT_DIR = ROOT / "results" / "saes"
 D_SAE = 4096
 L1_COEFFICIENT = 1e-3
 LEARNING_RATE = 1e-4
@@ -23,10 +26,10 @@ print(f"Using device: {DEVICE}")
 SAE_OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
 files = sorted(ACTIVATION_DIR.glob("*.pt"))
 if not files:
-    raise FileNotFoundError("No activation files found. Run 01_activation_caching.py first.")
+    raise FileNotFoundError(f"No activation files found in: {ACTIVATION_DIR}. Run 01_activation_caching.py first.")
 
 tensors = [torch.load(f).to(torch.float32) for f in files]
-all_act = torch.cat(tensors, dim=0)
+all_act = torch.cat(tensors, dim=0)  # [num_tokens, d_model]
 print(f"Loaded activation tensor of shape: {all_act.shape}")
 
 d_model = all_act.shape[-1]
@@ -40,16 +43,19 @@ for epoch in range(EPOCHS):
     for batch in tqdm(dataloader, desc=f"Epoch {epoch+1}/{EPOCHS}"):
         acts = batch[0].to(DEVICE)
         optimizer.zero_grad()
-        sae_out, feature_acts, loss, _, _, _ = sae(acts)
+        _, _, loss, _, _, _ = sae(acts)
         loss.backward()
         optimizer.step()
-    print(f"Epoch {epoch+1} complete. Final loss: {loss.item()}")
+    print(f"Epoch {epoch+1} complete. Final loss: {loss.item():.6f}")
 
-torch.save({
-    "state_dict": sae.state_dict(),
-    "d_model": d_model,
-    "d_sae": D_SAE,
-    "l1_coefficient": L1_COEFFICIENT
-}, SAE_OUTPUT_DIR / "sae_model.pt")
-
-print("SAE training complete.")
+ckpt_path = SAE_OUTPUT_DIR / "sae_model.pt"
+torch.save(
+    {
+        "state_dict": sae.state_dict(),
+        "d_model": d_model,
+        "d_sae": D_SAE,
+        "l1_coefficient": L1_COEFFICIENT,
+    },
+    ckpt_path,
+)
+print(f"SAE training complete. Saved to: {ckpt_path}")
