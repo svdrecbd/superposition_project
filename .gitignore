@@ -7,3 +7,5 @@ __pycache__/
 # Large data and model files
 results/
 *.pt
+.venv/
+.DS_Store
