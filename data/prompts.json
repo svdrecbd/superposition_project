@@ -1,0 +1,14 @@
+{
+  "pure_code": [
+    "Write a Python function to compute the factorial of a number.",
+    "Show me an example of a simple class in Python with an __init__ method."
+  ],
+  "pure_math": [
+    "What is the quadratic formula, expressed in LaTeX?",
+    "Provide the LaTeX for the integral of x squared, which is \\frac{x^3}{3} + C."
+  ],
+  "mixed": [
+    "Explain the implementation of the Adam optimizer, providing the Python code and the LaTeX equations for the update steps.",
+    "In a Python docstring, describe the mathematical formula for variance using LaTeX."
+  ]
+}

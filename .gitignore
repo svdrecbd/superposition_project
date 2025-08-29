@@ -1,0 +1,9 @@
+# Python cache
+__pycache__/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Large data and model files
+results/
+*.pt
