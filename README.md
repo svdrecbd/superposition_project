@@ -1,5 +1,3 @@
-Of course. Here is the revised and cleaned-up version of your README.
-
 -----
 
 # Superposition Project: SAE Steering on Qwen3
