@@ -8,4 +8,11 @@ __pycache__/
 results/
 *.pt
 .venv/
-.DS_Store
+.DS_Store# --- allow selected artifacts in results (keep everything else ignored) ---
+!results/
+results/*
+!results/*.json
+!results/*.csv
+!results/plots/
+results/plots/*
+!results/plots/*.png
