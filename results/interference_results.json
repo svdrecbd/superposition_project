@@ -1,6 +1,13 @@
 [
   {
     "feature": "code_feature",
+    "alpha": -4.0,
+    "math_margin_mean": 39.93589743589744,
+    "code_valid_rate": 0.23076923076923078,
+    "latex_valid_rate": 0.9487179487179487
+  },
+  {
+    "feature": "code_feature",
     "alpha": -3.0,
     "math_margin_mean": 40.01923076923077,
     "code_valid_rate": 0.20512820512820512,
@@ -54,6 +61,13 @@
     "math_margin_mean": 40.1474358974359,
     "code_valid_rate": 0.15384615384615385,
     "latex_valid_rate": 0.9230769230769231
+  },
+  {
+    "feature": "random_control",
+    "alpha": -4.0,
+    "math_margin_mean": 39.01282051282051,
+    "code_valid_rate": 0.15384615384615385,
+    "latex_valid_rate": 0.9487179487179487
   },
   {
     "feature": "random_control",
