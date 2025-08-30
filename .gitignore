@@ -16,3 +16,13 @@ results/*
 !results/plots/
 results/plots/*
 !results/plots/*.png
+!results/
+results/*
+!results/*.json
+!results/*.csv
+!results/plots/
+results/plots/*
+!results/plots/*.png
+!results/runs/
+results/runs/*
+!results/runs/*.jsonl
