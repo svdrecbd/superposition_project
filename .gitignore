@@ -26,3 +26,7 @@ results/plots/*
 !results/runs/
 results/runs/*
 !results/runs/*.jsonl
+
+!results/saes/
+results/saes/*
+!results/saes/*.pt
