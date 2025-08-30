@@ -1,5 +1,3 @@
-awesome — here’s a clean, drop-in **README.md** you can paste directly on GitHub. it matches your repo (Apache-2.0, Qwen3-4B-Instruct, L18 hooks, SAE=4096), includes quickstart + troubleshooting, and points to the artifacts you already committed.
-
 ```markdown
 # superposition_project
 
