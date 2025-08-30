@@ -275,6 +275,3 @@ See [`LICENSE`](./LICENSE) for details.
   year   = {2025},
   url    = {https://github.com/svdrecbd/superposition_project}
 }
-```
-
-```
