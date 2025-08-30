@@ -1,0 +1,8 @@
+Using device: cuda
+Loaded decoder: d_in=2560, d_sae=4096
+
+--- Steering with: code_feature ---
+
+--- Steering with: random_control ---
+
+Steering evaluation complete. Results saved to results/interference_results.json
