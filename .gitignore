@@ -30,3 +30,7 @@ results/runs/*
 !results/saes/
 results/saes/*
 !results/saes/sae_decoder.pt
+
+# local-only
+logs/
+results/run_config.json
