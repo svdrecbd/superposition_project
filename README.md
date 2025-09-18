@@ -1,6 +1,6 @@
 -----
 
-# Superposition Project: SAE Steering on Qwen3
+# Superposition Experimentation: SAE Steering on Qwen3
 
 This repository contains experiments on steering the **`Qwen/Qwen3-4B-Instruct-2507`** model using a Sparse Autoencoder (SAE).
 
